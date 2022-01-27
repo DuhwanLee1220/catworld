@@ -1,4 +1,8 @@
 from ClassFood import Food
+import random as rd
+from printer import *
+
+from printer import printInfo
 #고양이 클래스
 #속성
 #   체력    
@@ -13,7 +17,10 @@ class Cat:
     MAX_HEALTHPOINT = 100
     MAX_SATIETY = 100
     MAX_AFFECTION = 100
-    
+    MIN_HEALTHPOINT = 0
+    MIN_SATIETY = 0
+    MIN_AFFECTION = -30
+
     def __init__(self,name,sex):
         self.name = name #고양이의 이름
         self.sex = sex #고양이의 성별, 나중에 중성화 할 때 self.sex = '중성'으로 바뀜.
@@ -37,7 +44,19 @@ class Cat:
             self.healthPoint = 100
         else:
             self.healthPoint = self.healthPoint + food.healthPoint
-        
-        print("%s의 포만감은 %d, 친밀감은 %d, 체력은 %d입니다" %(self.name, self.satiety, self.affection,self.healthPoint))
+        printLineFeed2('%s이가 %s를 먹었습니다!' % (self.name,food.name))
+        printInfo("%s의 포만감은 %d, 친밀감은 %d, 체력은 %d입니다" %(self.name, self.satiety, self.affection,self.healthPoint))
+    
+    def affectionDown(self):
+        self.affection -= rd.randint(1,5)
+        if self.affection < self.MIN_AFFECTION:
+            self.affection = self.MIN_AFFECTION
+    
+    def affectionUp(self):
+        self.affection += rd.randint(1,3)
+        if self.affection >= self.MAX_AFFECTION:
+            self.affection = self.MAX_AFFECTION
+    
+    
 
 

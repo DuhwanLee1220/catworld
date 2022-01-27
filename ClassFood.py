@@ -11,9 +11,11 @@ class Food:
         self.affection = affection
         self.healthPoint = healthPoint
         self.price = price
+
         
-food1 = Food('참치캔',4,2,1,5)
-food2 = Food('츄르',1,4,0,3)
-food3 = Food('영양제',1,1,5,5)
-food4 = Food('사료',3,2,2,5)
-food5 = Food('물',1,1,2,2)
+food1 = Food('참치캔',7,3,2,5)
+food2 = Food('츄르',3,8,1,3)
+food3 = Food('영양제',2,2,10,6)
+food4 = Food('사료',5,3,4,5)
+food5 = Food('물',3,2,5,2)
+
